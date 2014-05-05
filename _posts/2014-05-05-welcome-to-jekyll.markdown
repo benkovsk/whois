@@ -6,8 +6,6 @@ categories: jekyll update
 published: true
 ---
 
-[[_TOC_]]
-
 # A first header
 I am trying here to see if we can use prose and simple markdown to create documentation. The first problem I see that this seems more of a blogging framework, less a documentation kind of framework.
 
