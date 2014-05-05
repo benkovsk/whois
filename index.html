@@ -7,7 +7,7 @@ title: The NCC-RIPE documentation page
   <h1>Documentation</h1>
   <ul class="posts">
     {% for post in site.posts %}
-      <li><span><a href="{{ post.url }}">{{ post.title }}</a></li>
+      <li><span><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
 </div>
