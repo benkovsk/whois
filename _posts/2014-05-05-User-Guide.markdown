@@ -12,7 +12,9 @@ published: true
 
 # RIPE Database User Manual: Getting Started
 
-## Intended Audience
+## Introduction
+
+### Intended Audience
 
 This document is intended for users who have no previous experience with the RIPE Database. It should give the reader a basic understanding of the following concepts:
 *  What the RIPE Database is
@@ -20,10 +22,15 @@ This document is intended for users who have no previous experience with the RIP
 *  How to maintain information in the RIPE Database
 
 It is not intended to be a complete reference. Full information on the RIPE Database may be found in the following documents:
+
 * [RIPE Database Query Reference Manual] (http://dit.is.een.link)
-## Abstract
+
+
+### Abstract
+
 This is a hands-on tutorial that walks the reader through the basic concepts and techniques that are needed to use the RIPE Database using examples and exercises.
-Conventions Used in This Document
+
+### Conventions Used in This Document
 We use <label> for a placeholder or to indicate syntax.
 We use [option] to indicate an optional text or command argument. We
 use a bold font to indicate an object type.
