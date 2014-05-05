@@ -1,4 +1,4 @@
 name: The RIPE-NCC documentation site
-markdown: redcarpet
+markdown: kramdown
 pygments: true
 baseurl: /whois
