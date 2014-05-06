@@ -1,4 +1,6 @@
 name: The RIPE-NCC documentation site
 markdown: kramdown
+kramdown:
+  input: GFM
 pygments: true
 baseurl: /whois
