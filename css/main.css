@@ -155,3 +155,42 @@ a:visited { color: #a0a; }
 .post pre.terminal code {
   background-color: #333;
 }
+
+
+/*****************************************************************************/
+/*
+/* Documentation
+/*
+/*****************************************************************************/
+
+/* standard */
+.documentation  pre {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .4em;
+}
+
+.documentation ul, .documentation ol {
+  margin-left: 1.35em;
+}
+
+.documentation code {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .2em;
+}
+
+.documentation pre code {
+  border: none;
+}
+
+/* terminal */
+.documentation pre.terminal {
+  border: 1px solid #000;
+  background-color: #333;
+  color: #FFF;
+}
+
+.documentation pre.terminal code {
+  background-color: #333;
+}
