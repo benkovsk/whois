@@ -46,14 +46,15 @@ this manual will make clear what is being discussed.
 
 ## The RIPE Database
 
-The RIPE Network Management Database, often called the 'RIPE Database' is a public database that contains information about registered IP address space and AS Numbers, routing policies,
-and reverse DNS delegations in the RIPE NCC service region. It is used for Internet network management.
+The RIPE Network Management Database, often called the 'RIPE Database' is a public database that contains information about registered IP address space and AS Numbers, routing policies, and reverse DNS delegations in the RIPE NCC service region. It is used for Internet network management.
 
 ### Database Objects
 
 Records in the RIPE Database are called "objects". Each object is a list of "attribute- value" pairs displayed in plain text. An example:
-person:  Smith  
-address: LTD  
+
+~~~
+person:  John Smith  
+address: LTD 
 phone: 004  
 e-mail: john.smith@example.com nic-hdl: JS1- TEST
 remarks: *******************************
@@ -66,6 +67,8 @@ John
 Example
 High street 12 St.Mery Mead Essex, UK
 +44 1737 892
+~~~
+
 This is a person object for John Smith. The attributes are "person:", "address:", "phone:" and so on. An attribute name always starts in the first column, and ends with a colon (:). Everything after the colon is the value.
 Objects can store information about different resources. For example:
 ￼￼￼￼￼Network Management Resource
@@ -80,13 +83,18 @@ Objects can store information about different resources. For example:
 ￼￼￼￼￼￼person, role, organisation
 ￼￼￼￼Authentication Information
 ￼￼￼￼mntner
-￼￼￼1.2 TEST Database
-The RIPE NCC provides a TEST Database where users can learn how to use the whois database software. The TEST Database uses the same software as the RIPE Database, but changes in one do not affect the other. The data in the TEST Database is not a copy of the real data in the RIPE Database and is provided purely for learning purposes.
-All examples below use the TEST Database. However, all procedures described are the same for the RIPE Database. In section 5.0 Using the Production RIPE Database, we will explain what the differences are when using the RIPE Database. Do not use the production RIPE Database for testing purposes. It is good practice to delete all objects you have created in the TEST Database when you have finished the exercises in this guide.
-2.0 How to Get Information from the TEST Database 2.1 Web Queries
-The simplest way to get information from the TEST Database is to use the web interface available at:
-http://www.ripe.net/perl/test-whois
-2.2 Making Simple Queries
+
+### TEST Database
+The RIPE NCC provides a TEST Database where users can learn how to use the whois database software. The TEST Database uses the same software as the RIPE Database, but changes in one do not affect the other. The data in the TEST Database is not a copy of the real data in the RIPE Database and is provided purely for learning purposes. All examples below use the TEST Database. However, all procedures described are the same for the RIPE Database. In section 5.0 Using the Production RIPE Database, we will explain what the differences are when using the RIPE Database. Do not use the production RIPE Database for testing purposes. It is good practice to delete all objects you have created in the TEST Database when you have finished the exercises in this guide.
+
+## How to Get Information from the TEST Database
+
+### Web Queries
+
+The simplest way to get information from the TEST Database is to use the web interface available at: [http://www.ripe.net/perl/test-whois]
+
+### Making Simple Queries
+
 To query for a particular object the user specifies its "primary key:". This is an attribute value that identifies a unique occurrence of the object type.
 Example:
 We are going to query for the person object with the "nic-hdl:" attribute JS1-TEST. Type the following in the query box:
