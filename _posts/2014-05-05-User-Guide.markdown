@@ -7,51 +7,58 @@ date: {05-05-2014}
 published: true
 ---
 
-* Table of Contents
+1. Table of Contents
 {:toc}
+<p/>
 
+#RIPE Database User Manual: Getting Started
+<p/>
+##Introduction
 
-RIPE Database User Manual: Getting Started
-==========================================
+No text here yet.
 
-## Introduction
-
-### Intended Audience
+## Intended Audience
 
 This document is intended for users who have no previous experience with the RIPE Database. It should give the reader a basic understanding of the following concepts:
-*  What the RIPE Database is
+
+* What the RIPE Database is
 * How to get information from the RIPE Database
-*  How to maintain information in the RIPE Database
+* How to maintain information in the RIPE Database
 
 It is not intended to be a complete reference. Full information on the RIPE Database may be found in the following documents:
 
-* [RIPE Database Query Reference Manual] (http://dit.is.een.link)
+* [RIPE Database Query Reference Manual](http://dit.is.een.link)
 
-### Abstract
+^
+
+## Abstract
 
 This is a hands-on tutorial that walks the reader through the basic concepts and techniques that are needed to use the RIPE Database using examples and exercises.
 
 ### Conventions Used in This Document
-We use <label> for a placeholder or to indicate syntax.
-We use [option] to indicate an optional text or command argument. We
-use a bold font to indicate an object type.
-We use "attribute:" to indicate an attribute of an object.
-"RIPE Database" usually means the interface software rather than the information in the database. Where there may be any doubt, this manual will make clear what is being discussed.
+
+We use <label> for a placeholder or to indicate syntax. We use [option] to indicate an optional text or command argument. We use a bold font to indicate an object type.
+We use "attribute:" to indicate an attribute of an object. "RIPE Database" usually means the interface software rather than the information in the database. Where there may be any doubt,
+this manual will make clear what is being discussed.
 
 # The RIPE Database
-The RIPE Network Management Database, often called the 'RIPE Database' is a public database that contains information about registered IP address space and AS Numbers, routing policies, and reverse DNS delegations in the RIPE NCC service region. It is used for Internet network management.
-1.1 Database Objects
+
+The RIPE Network Management Database, often called the 'RIPE Database' is a public database that contains information about registered IP address space and AS Numbers, routing policies,
+and reverse DNS delegations in the RIPE NCC service region. It is used for Internet network management.
+
+## Database Objects
+
 Records in the RIPE Database are called "objects". Each object is a list of "attribute- value" pairs displayed in plain text. An example:
-person:
-Smith
-address:
-LTD
-phone:
-004
+person:  Smith  
+address: LTD  
+phone: 004  
 e-mail: john.smith@example.com nic-hdl: JS1- TEST
-remarks: ******************************* remarks: This object is only an example!
-remarks: abuse-mailbox: changed: source:
-******************************* abuse@example.com john.smith@example.com 20051104 TEST
+remarks: *******************************
+remarks: This object is only an example!
+remarks:
+abuse-mailbox:
+changed:
+source: ******************************* abuse@example.com john.smith@example.com 20051104 TEST
 John
 Example
 High street 12 St.Mery Mead Essex, UK
