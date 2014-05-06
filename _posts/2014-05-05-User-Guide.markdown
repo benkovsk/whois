@@ -9,15 +9,18 @@ published: true
 
 1. Table of Contents
 {:toc}
-<p/>
 
-#RIPE Database User Manual: Getting Started
-<p/>
-##Introduction
+^
+
+## RIPE Database User Manual: Getting Started
+
+^
+
+### Introduction
 
 No text here yet.
 
-## Intended Audience
+### Intended Audience
 
 This document is intended for users who have no previous experience with the RIPE Database. It should give the reader a basic understanding of the following concepts:
 
@@ -31,7 +34,7 @@ It is not intended to be a complete reference. Full information on the RIPE Data
 
 ^
 
-## Abstract
+### Abstract
 
 This is a hands-on tutorial that walks the reader through the basic concepts and techniques that are needed to use the RIPE Database using examples and exercises.
 
@@ -41,12 +44,12 @@ We use <label> for a placeholder or to indicate syntax. We use [option] to indic
 We use "attribute:" to indicate an attribute of an object. "RIPE Database" usually means the interface software rather than the information in the database. Where there may be any doubt,
 this manual will make clear what is being discussed.
 
-# The RIPE Database
+## The RIPE Database
 
 The RIPE Network Management Database, often called the 'RIPE Database' is a public database that contains information about registered IP address space and AS Numbers, routing policies,
 and reverse DNS delegations in the RIPE NCC service region. It is used for Internet network management.
 
-## Database Objects
+### Database Objects
 
 Records in the RIPE Database are called "objects". Each object is a list of "attribute- value" pairs displayed in plain text. An example:
 person:  Smith  
