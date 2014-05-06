@@ -94,7 +94,6 @@ different resources. For example:
 
 
 
-
 ### TEST Database
 
 The RIPE NCC provides a TEST Database where users can learn how to use
@@ -121,42 +120,64 @@ the web interface available at (this url)[http://www.ripe.net/perl/test-whois]
 
 ### Making Simple Queries
 
-To query for a particular object the user specifies its "primary key:". This is an attribute value that identifies a unique occurrence of the object type.
+To query for a particular object the user specifies its "primary
+key:". This is an attribute value that identifies a unique occurrence
+of the object type. 
 
 Example:
 
 We are going to query for the person object with the "nic-hdl:" attribute JS1-TEST. Type the following in the query box:
 
+~~~~
 js1-test
+~~~~
 
-The reply includes the object in section 1.1 Database Objects. Note that the attribute value is not case-sensitive.
-￼￼￼￼￼￼￼Object Type
-￼￼￼Primary Key Attribute
-￼￼￼Example Primary Key Value
-￼￼￼￼￼inetnum
-￼￼￼￼￼￼"inetnum:"
-￼￼￼￼￼193.0.0.0 - 193.0.0.255
-￼￼￼￼inet6num
-￼￼￼￼"inet6num:"
-￼￼￼2001:0610:0240::/42
-￼￼￼￼person
-￼￼￼￼"nic-hdl:"
-￼￼￼JS1-TEST
-￼￼￼￼
-3.0 How to Maintain Information in the RIPE Database
-The RIPE Database is used for storing information about Internet resources. You will need to create objects in the database to document your usage of these resources.
-Objects in the RIPE Database must reflect the current state of the resources they describe. It is important to modify objects as the details of resources change, or delete objects if resources are no longer used. When IP addresses are assigned to customers, or new staff members are appointed as contacts, it is important to create new objects to reflect this in the database.
-You can make updates to the database by using the online update interface ( webupdates) available at:
-https://www.ripe.net/fcgi-bin/webupdates.pl
-With webupdates, users can directly create, modify or delete database objects using automated processing. After you submit an object update, the screen will return a complete report of the requested operation.
-If there were any errors, the update will fail, and the report will describe the reason(s) for this failure. If the error report does not help you resolve the problem, you can send a copy of it to <ripe-dbm@ripe.net >. A RIPE NCC customer support representative will help you resolve the problem.
-The following sections describe the process of creating and maintaining objects in the TEST Database. By the end of this document, you will have learned how to create and protect an object representing a network assignment.
-3.1 Selecting the Database
-Throughout much of this document, you will learn how to perform modifications using the TEST Database. Before each update is performed, you need to select the TEST Database as source in webupdates.
-To select the TEST Database as source, go to:
+The reply includes the object in section 1.1 Database Objects. Note
+that the attribute value is not case-sensitive.
+
+|Object Type |Primary Key Attribute |Example Primary Key Value|
+|------------|----------------------|-------------------------|
+|inetnum|"inetnum:"|193.0.0.0 - 193.0.0.255|
+|inet6num|"inet6num:"|2001:0610:0240::/42|
+|person|"nic-hdl:"|JS1-TEST|
+<p/>
+## How to Maintain Information in the RIPE Database
+
+The RIPE Database is used for storing information about Internet
+resources. You will need to create objects in the database to document
+your usage of these resources. Objects in the RIPE Database must
+reflect the current state of the resources they describe. It is
+important to modify objects as the details of resources change, or
+delete objects if resources are no longer used. When IP addresses are
+assigned to customers, or new staff members are appointed as contacts,
+it is important to create new objects to reflect this in the database.
+You can make updates to the database by using the online update
+interface ( webupdates) available
+(here)[https://www.ripe.net/fcgi-bin/webupdates.pl]
+
+With webupdates, users can directly create, modify or delete database
+objects using automated processing. After you submit an object update,
+the screen will return a complete report of the requested operation. 
+
+If there were any errors, the update will fail, and the report will
+describe the reason(s) for this failure. If the error report does not
+help you resolve the problem, you can send a copy of it to
+<ripe-dbm@ripe.net >. A RIPE NCC customer support representative will
+help you resolve the problem.
+
+The following sections describe the process of creating and
+maintaining objects in the TEST Database. By the end of this document,
+you will have learned how to create and protect an object representing
+a network assignment.
+
+### Selecting the Database
+Throughout much of this document, you will learn how to perform
+modifications using the TEST Database. Before each update is
+performed, you need to select the TEST Database as source in
+webupdates. To select the TEST Database as source, go to:
 https://www.ripe.net/fcgi-bin/webupdates.pl
 Click [Select Source] in the header of webupdates:
-￼￼￼
+
 ￼2. Select "RIPE TEST Database" from the list and press Select Update Source. 3.2 Creating Objects
 The inetnum object contains information about registered IP address space; this includes the range of addresses, status and responsible contacts.
 Before this object can be created in the database, you must first create some preliminary objects. These objects contain information that is referenced by the inetnum object. This requires the creation of the following objects:
