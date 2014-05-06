@@ -10,7 +10,9 @@ published: true
 * Table of Contents
 {:toc}
 
-# RIPE Database User Manual: Getting Started
+
+RIPE Database User Manual: Getting Started
+==========================================
 
 ## Introduction
 
@@ -24,7 +26,6 @@ This document is intended for users who have no previous experience with the RIP
 It is not intended to be a complete reference. Full information on the RIPE Database may be found in the following documents:
 
 * [RIPE Database Query Reference Manual] (http://dit.is.een.link)
-
 
 ### Abstract
 
