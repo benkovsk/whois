@@ -190,7 +190,31 @@ a:visited { color: #a0a; }
   background-color: #333;
   color: #FFF;
 }
-
+ 
 .documentation pre.terminal code {
   background-color: #333;
 }
+
+.documentation table {
+    width: 100%;
+}
+
+.documentation th {
+	font-size: 13px;
+	font-weight: normal;
+	padding: 8px;
+	background: #b9c9fe;
+	border-top: 4px solid #aabcfe;
+	border-bottom: 1px solid #fff;
+	color: #039;
+}
+
+.documentation td {
+	padding: 8px;
+	background: #e8edff; 
+	border-bottom: 1px solid #fff;
+	color: #669;
+	border-top: 1px solid transparent;
+        text-align: left;
+}
+

@@ -9,26 +9,25 @@ published: true
 
 1. Table of Contents
 {:toc}
-
-^
-
-## RIPE Database User Manual: Getting Started
-
-^
-
+<p/>
+## Getting Started
+<p/>
 ### Introduction
 
 No text here yet.
 
 ### Intended Audience
 
-This document is intended for users who have no previous experience with the RIPE Database. It should give the reader a basic understanding of the following concepts:
+This document is intended for users who have no previous experience
+with the RIPE Database. It should give the reader a basic
+understanding of the following concepts:
 
 * What the RIPE Database is
 * How to get information from the RIPE Database
 * How to maintain information in the RIPE Database
 
-It is not intended to be a complete reference. Full information on the RIPE Database may be found in the following documents:
+It is not intended to be a complete reference. Full information on the
+RIPE Database may be found in the following documents:
 
 * [RIPE Database Query Reference Manual](http://dit.is.een.link)
 
@@ -36,56 +35,80 @@ It is not intended to be a complete reference. Full information on the RIPE Data
 
 ### Abstract
 
-This is a hands-on tutorial that walks the reader through the basic concepts and techniques that are needed to use the RIPE Database using examples and exercises.
+This is a hands-on tutorial that walks the reader through the basic
+concepts and techniques that are needed to use the RIPE Database using
+examples and exercises.
 
 ### Conventions Used in This Document
 
-We use <label> for a placeholder or to indicate syntax. We use [option] to indicate an optional text or command argument. We use a bold font to indicate an object type.
-We use "attribute:" to indicate an attribute of an object. "RIPE Database" usually means the interface software rather than the information in the database. Where there may be any doubt,
-this manual will make clear what is being discussed.
+We use &lt;label&gt; for a placeholder or to indicate syntax. We use
+[option] to indicate an optional text or command argument. We use a
+bold font to indicate an object type. We use "attribute:" to indicate
+an attribute of an object. "RIPE Database" usually means the interface
+software rather than the information in the database. Where there may
+be any doubt, this manual will make clear what is being discussed.
 
 ## The RIPE Database
 
-The RIPE Network Management Database, often called the 'RIPE Database' is a public database that contains information about registered IP address space and AS Numbers, routing policies, and reverse DNS delegations in the RIPE NCC service region. It is used for Internet network management.
+The RIPE Network Management Database, often called the 'RIPE Database'
+is a public database that contains information about registered IP
+address space and AS Numbers, routing policies, and reverse DNS
+delegations in the RIPE NCC service region. It is used for Internet
+network management.
 
 ### Database Objects
 
-Records in the RIPE Database are called "objects". Each object is a list of "attribute- value" pairs displayed in plain text. An example:
+Records in the RIPE Database are called "objects". Each object is a
+list of "attribute- value" pairs displayed in plain text. An example: 
 
 ~~~
 person:  John Smith  
-address: LTD 
-phone: 004  
-e-mail: john.smith@example.com nic-hdl: JS1- TEST
+address: Example Ltd
+         High Street 12
+         St. Mery Mead
+         Essex, Uk
+phone:   +44 1737 892 
+e-mail: john.smith@example.com
+nic-hdl: JS1- TEST
 remarks: *******************************
 remarks: This object is only an example!
-remarks:
-abuse-mailbox:
-changed:
-source: ******************************* abuse@example.com john.smith@example.com 20051104 TEST
-John
-Example
-High street 12 St.Mery Mead Essex, UK
-+44 1737 892
+remarks: *******************************
+abuse-mailbox: abuse@example.com
+changed: john.smith@example.com 20051104
+source:    TEST
 ~~~
 
-This is a person object for John Smith. The attributes are "person:", "address:", "phone:" and so on. An attribute name always starts in the first column, and ends with a colon (:). Everything after the colon is the value.
-Objects can store information about different resources. For example:
-￼￼￼￼￼Network Management Resource
-￼￼￼Object types
-￼￼￼￼￼IP Address Ranges
-￼￼￼￼￼￼inetnum, inet6num
-￼￼￼￼Routing Policies
-￼aut-num, route, route6
-￼￼￼￼￼Reverse DNS Delegations
-￼￼￼domain
-￼￼￼￼￼Contact Information
-￼￼￼￼￼￼person, role, organisation
-￼￼￼￼Authentication Information
-￼￼￼￼mntner
+This is a **person** object for John Smith. The attributes are 
+"person:", "address:", "phone:" and so on. An attribute name always 
+starts in the first column, and ends with a colon (:). Everything 
+after the colon is the value. Objects can store information about 
+different resources. For example:
+
+| Network Management Resource | Object types |
+|-----------------------------|--------------|
+|IP Address Ranges            |inetnum, inet6num |
+| Routing Policies            |aut-num, route, route6 |
+|Reverse DNS Delegations  |domain | 
+|Contact Information | person, role, organisation |
+|Authentication Information |mntner |
+
+
+
 
 ### TEST Database
-The RIPE NCC provides a TEST Database where users can learn how to use the whois database software. The TEST Database uses the same software as the RIPE Database, but changes in one do not affect the other. The data in the TEST Database is not a copy of the real data in the RIPE Database and is provided purely for learning purposes. All examples below use the TEST Database. However, all procedures described are the same for the RIPE Database. In section 5.0 Using the Production RIPE Database, we will explain what the differences are when using the RIPE Database. Do not use the production RIPE Database for testing purposes. It is good practice to delete all objects you have created in the TEST Database when you have finished the exercises in this guide.
+
+The RIPE NCC provides a TEST Database where users can learn how to use
+the whois database software. The TEST Database uses the same software
+as the RIPE Database, but changes in one do not affect the other. The
+data in the TEST Database is not a copy of the real data in the RIPE
+Database and is provided purely for learning purposes. All examples
+below use the TEST Database. However, all procedures described are the
+same for the RIPE Database. In section 5.0 Using the Production RIPE
+Database, we will explain what the differences are when using the RIPE
+Database. Do not use the production RIPE Database for testing
+purposes. It is good practice to delete all objects you have created
+in the TEST Database when you have finished the exercises in this
+guide. 
 
 ## How to Get Information from the TEST Database
 
@@ -93,14 +116,19 @@ The RIPE NCC provides a TEST Database where users can learn how to use the whois
 
 ### Web Queries
 
-The simplest way to get information from the TEST Database is to use the web interface available at: [http://www.ripe.net/perl/test-whois]
+The simplest way to get information from the TEST Database is to use
+the web interface available at (this url)[http://www.ripe.net/perl/test-whois] 
 
 ### Making Simple Queries
 
 To query for a particular object the user specifies its "primary key:". This is an attribute value that identifies a unique occurrence of the object type.
+
 Example:
+
 We are going to query for the person object with the "nic-hdl:" attribute JS1-TEST. Type the following in the query box:
+
 js1-test
+
 The reply includes the object in section 1.1 Database Objects. Note that the attribute value is not case-sensitive.
 ￼￼￼￼￼￼￼Object Type
 ￼￼￼Primary Key Attribute
