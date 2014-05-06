@@ -14,7 +14,6 @@ html, body { height: 100%; }
 
 body {
   background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
   font-size: small;
   text-align: center;
 }
@@ -200,7 +199,6 @@ a:visited { color: #a0a; }
 }
 
 .documentation th {
-	font-size: 13px;
 	font-weight: normal;
 	padding: 8px;
 	background: #b9c9fe;
