@@ -9,9 +9,9 @@ published: true
 
 1. Table of Contents
 {:toc}
-<p/>
+
 ## Getting Started
-<p/>
+
 ### Introduction
 
 No text here yet.
@@ -30,8 +30,6 @@ It is not intended to be a complete reference. Full information on the
 RIPE Database may be found in the following documents:
 
 * [RIPE Database Query Reference Manual](http://dit.is.een.link)
-
-^
 
 ### Abstract
 
@@ -124,9 +122,8 @@ To query for a particular object the user specifies its "primary
 key:". This is an attribute value that identifies a unique occurrence
 of the object type. 
 
-Example:
-
-We are going to query for the person object with the "nic-hdl:" attribute JS1-TEST. Type the following in the query box:
+Example: We are going to query for the person object with the
+"nic-hdl:" attribute JS1-TEST. Type the following in the query box: 
 
 ~~~~
 js1-test
