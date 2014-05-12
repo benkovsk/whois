@@ -91,7 +91,6 @@ different resources. For example:
 |Authentication Information |mntner |
 
 
-
 ### TEST Database
 
 The RIPE NCC provides a TEST Database where users can learn how to use
@@ -108,8 +107,6 @@ in the TEST Database when you have finished the exercises in this
 guide. 
 
 ## How to Get Information from the TEST Database
-
-^
 
 ### Web Queries
 
@@ -137,7 +134,7 @@ that the attribute value is not case-sensitive.
 |inetnum|"inetnum:"|193.0.0.0 - 193.0.0.255|
 |inet6num|"inet6num:"|2001:0610:0240::/42|
 |person|"nic-hdl:"|JS1-TEST|
-<p/>
+
 ## How to Maintain Information in the RIPE Database
 
 The RIPE Database is used for storing information about Internet
@@ -173,28 +170,47 @@ modifications using the TEST Database. Before each update is
 performed, you need to select the TEST Database as source in
 webupdates. To select the TEST Database as source, go to:
 https://www.ripe.net/fcgi-bin/webupdates.pl
+
 Click [Select Source] in the header of webupdates:
 
-￼2. Select "RIPE TEST Database" from the list and press Select Update Source. 3.2 Creating Objects
-The inetnum object contains information about registered IP address space; this includes the range of addresses, status and responsible contacts.
-Before this object can be created in the database, you must first create some preliminary objects. These objects contain information that is referenced by the inetnum object. This requires the creation of the following objects:
-● A person object that contains information about the administrative and technical contacts for this network. This is referenced from the "admin-c:" and "tech-c:" attributes of the inetnum object.
-● A mntner object that contains authentication information that identifies who can modify the contents of this object. This is referenced from the "mnt-by:" attribute of the inetnum object. The mntner object protects the inetnum object.
-3.3 Registering Contact Information
+￼2. Select "RIPE TEST Database" from the list and press Select Update Source.
+
+### Creating Objects
+The inetnum object contains information about registered IP address
+space; this includes the range of addresses, status and responsible
+contacts. Before this object can be created in the database, you must
+first create some preliminary objects. These objects contain
+information that is referenced by the inetnum object. This requires
+the creation of the following objects:  
+
+* A person object that contains information about the administrative
+  and technical contacts for this network. This is referenced from
+  the "admin-c:" and "tech-c:" attributes of the inetnum object. 
+* A mntner object that contains authentication information that
+  identifies who can modify the contents of this object. This is
+  referenced from the "mnt-by:" attribute of the inetnum object. The
+  mntner object protects the inetnum object.
+
+### Registering Contact Information
 Contact information, such as a phone number and e-mail address, is stored in the person
 object. To create a new person object in the database:
+
 1. Select the TEST Database as your update source. We tell you how to do this in section 3.1 Selecting the Database.
 2. Click on the [Add] option (in the header of webupdates) to create a new object in the TEST Database and select object type: "person":
 3. Click on Add Object.
-4. In the next screen, enter the information for the attributes of the object that you
-are creating.
+4. In the next screen, enter the information for the attributes of the
+   object that you are creating.
+
 An attribute has two main characteristics:
-● Mandatory/Optional – If an attribute is mandatory, it must always be present in any object of that type that is stored in the RIPE Database. If it is optional, you can leave it out.
-● Single/Multiple – If an attribute is single, then only one attribute of that type can be present in an object. If it is multiple, the object can contain more than one instanceof the same attribute.
+
+* Mandatory/Optional – If an attribute is mandatory, it must always be present in any object of that type that is stored in the RIPE Database. If it is optional, you can leave it out.
+* Single/Multiple – If an attribute is single, then only one attribute of that type can be present in an object. If it is multiple, the object can contain more than one instanceof the same attribute.
+
 Note: To see the full template of an object type including the characteristics of all its attributes, you can query the database for: "-t [object type]".
-￼
-Example:
-Click on [Query Database] and enter:
+
+Example: Click on [Query Database] and enter:
+
+~~~
 -t person
 person: [mandatory] address: [mandatory]
 phone: [mandatory] fax-no: [optional] e-mail: [optional] org: [optional] nic-hdl: [mandatory] remarks: [optional] notify: [optional] abuse-mailbox: [optional] mnt-by: [optional] changed: [mandatory] source: [mandatory]
@@ -208,10 +224,14 @@ phone: [mandatory] fax-no: [optional] e-mail: [optional] org: [optional] nic-hdl
 [inverse key] [inverse key] [inverse key]
 []
 []
-When creating a new object with webupdates, only the mandatory attributes are shown automatically. You can add optional attributes and/or other instances of multiple attributes by using the Add New Field section.
-Return to the webupdates screen and prepare a person object to be created in the TEST Database.
-Use "AUTO-1" for the "nic-hdl:" attribute, your e-mail address for the "changed:" attribute, and "TEST" for the "source:" attribute.
-￼By checking the Force New box, you guarantee that the object is only created if it does not already exist in the database. We recommend that you keep this option checked, to avoid accidentally modifying an existing object.
+~~~
+When creating a new object with webupdates, only the mandatory
+attributes are shown automatically. You can add optional attributes
+and/or other instances of multiple attributes by using the Add New
+Field section. Return to the webupdates screen and prepare a person
+object to be created in the TEST Database. Use "AUTO-1" for the
+"nic-hdl:" attribute, your e-mail address for the "changed:"
+attribute, and "TEST" for the "source:" attribute.  By checking the Force New box, you guarantee that the object is only created if it does not already exist in the database. We recommend that you keep this option checked, to avoid accidentally modifying an existing object.
 5. When you have finished setting up the object, press Submit Update.
 6. Wait for an acknowledgement from the TEST Database to appear on your screen. This may take some time to complete. Here is an example of the type of message you will see, if your update is successful:
 Create SUCCEEDED: [person] JS1-TEST John Smith ***Warning: Date '20051104' added to changed: attribute 'john.smith@example.com'
