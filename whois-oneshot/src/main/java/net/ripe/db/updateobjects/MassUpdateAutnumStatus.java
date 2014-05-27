@@ -163,7 +163,7 @@ public class MassUpdateAutnumStatus {
                 return UpdateStatus.STATUS_ALREADY_SET;
             }
 
-            final String override = String.format("%s,%s,mass-update-autnum-status {notify=false}", username, password);
+            final String override = String.format("%s,%s,mass-update-autnum-status", username, password);
             final RpslObject updatedAutnum = restClient.request().addParam("unformatted", "").addParam("override", override).setNotifier(new NotifierCallback() {
                 @Override
                 public void notify(List<ErrorMessage> messages) {
