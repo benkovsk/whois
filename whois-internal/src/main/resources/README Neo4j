@@ -1,0 +1,81 @@
+Problems integrating the Spring Data Neo4J libs into whois:
+===========================================================
+
+#1: using the standalone neo4j server
+Needs the (maven) dependency spring-data-neo4j-rest, which causes problems with jersey
+
+#2: lucene version
+Putting all neo related stuff in it's own module, when using this module in whois-internal there's a (maven) dependency on lucene 3.X whereas whois-internal and all other whois modules are using lucene version 4.4.0. When integrating the neo module there's a classNotFound / noClassDef problem on some lucene Fieldable class.
+
+#3: cglib
+Whois is not using CGLIB for a number of reasons, but the spring-data-neo does rely on this library and once this dependency is included there needs to be a default constructor for a lot of unrelated daos in order to please spring-aop/CGLIB. I'm not changing all other daos because of this.
+
+
+
+Solution: Use the Neo4J REST API running the standalone server (more closely resembling what a production setup would do anyway)
+
+
+Suggested Data model
+====================
+Node: (n: ObjectInTime {type:<objecttype>, key:<pkey>})
+Relationship: [r: REFERENCES {from: <timestamp>, to: <timestamp>}]
+
+
+
+Useful Cypher queries, some needs to be translated to the REST API versions
+===========================================================================
+
+// get all references
+MATCH (refing) -[r1:REFERENCES] -> (m:ObjectInTime {type: "person", key: "nic-test"}) - [r2:REFERENCES] -> (refs)
+WHERE r1.from <= t AND r1.to >= t AND
+	  r2.from <= t AND r2.to >= t AND
+	  refing.from <= t AND refing.to >= t AND
+	  refs.from <= t AND refs.to >= t
+RETURN refing, refs
+
+
+// add one node
+CREATE (n: ObjectInTime {type: "person", key: "tp1-test"})
+
+
+// add a relationship between 2 existing nodes
+//- if one node of the nodes does not exist nothing is created
+MATCH (n: ObjectInTime {type: "person", key: "tp1-test"})
+MATCH (o: ObjectInTime {type: "organisation", key: "org-tl1-test"})
+CREATE (o)-[r:REFERENCES {from: 1200, to: 2000}] -> (n)
+
+// add a relationship between 2 nodes, create the relationship if it does not exist
+//- if one of the nodes don't exist nothing happens
+MATCH (n: ObjectInTime {type: "person", key: "tp1-test"})
+MATCH (o: ObjectInTime {type: "organisation", key: "org-tl1-test"})
+MERGE (o)-[r:REFERENCES {from: 1200, to: 2000}] -> (n)
+
+// can't have one merge and one match for the nodes, use merge for everything:
+MERGE (n: ObjectInTime {type: "inetnum", key: "193.0.0.0 - 193.255.255.255"})
+MERGE (o: ObjectInTime {type: "mntner", key: "test-mnt"})
+MERGE (v: ObjectInTime {type: "organisation", key: "org-tl1-test"})
+MERGE (n)-[r:REFERENCES {from: 1400}] -> (o)
+MERGE (n)-[s:REFERENCES {from: 1300}] -> (v)
+
+
+
+// update a property of the relationship
+MATCH (n) - [r:REFERENCES {from: 1200}] -> (b) set r.from = 1100
+
+
+// delete relationship
+MATCH (n) - [r:REFERENCES] -> (b) WHERE r.from is null DELETE r
+
+
+// get the relationships, incoming != outgoing
+MATCH (a: ObjectInTime {type: "organisation"}) -[outgoing: REFERENCES] -> (b)
+WHERE outgoing.from < 1600
+RETURN {} as inc, outgoing as out
+UNION
+MATCH (a: ObjectInTime {type: "organisation"}) <-[incoming: REFERENCES] - (b)
+WHERE incoming.from < 1600
+RETURN incoming as inc, {} as out
+
+
+
+

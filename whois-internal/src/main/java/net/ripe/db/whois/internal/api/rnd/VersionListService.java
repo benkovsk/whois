@@ -149,6 +149,20 @@ public class VersionListService {
         return Response.ok(whoisResources).build();
     }
 
+    @GET
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Path("/{source}/{objectType}/{key:.*}/cursions/{datetime:.*}")
+    public Response cursion (
+            @Context final HttpServletRequest request,
+            @PathParam("source") final String source,
+            @PathParam("objectType") final String objectType,
+            @PathParam("key") final String key,
+            @PathParam("datetime") final String datetime) {
+
+
+        return Response.ok().build();
+    }
+
     private void validSource(final HttpServletRequest request, final String source) {
         if (!sourceContext.getAllSourceNames().contains(CIString.ciString(source))) {
             throw new WebApplicationException(Response

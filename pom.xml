@@ -65,6 +65,7 @@
         <module>whois-db</module>
         <module>whois-endtoend</module>
         <module>whois-oneshot</module>
+        <module>whois-neo</module>
         <module>whois-internal</module>
     </modules>
 
@@ -122,6 +123,11 @@
             <dependency>
                 <groupId>net.ripe.db</groupId>
                 <artifactId>whois-query</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.ripe.db</groupId>
+                <artifactId>whois-neo</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
