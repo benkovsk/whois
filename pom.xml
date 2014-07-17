@@ -39,7 +39,7 @@
         <sonar.jdbc.password />
     </properties>
 
-    <scm>
+    <scm>                  '
         <developerConnection>scm:git:ssh://git@github.com/RIPE-NCC/whois.git</developerConnection>
     </scm>
 
@@ -65,7 +65,6 @@
         <module>whois-db</module>
         <module>whois-endtoend</module>
         <module>whois-oneshot</module>
-        <module>whois-neo</module>
         <module>whois-internal</module>
     </modules>
 
