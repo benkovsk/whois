@@ -39,7 +39,7 @@
         <sonar.jdbc.password />
     </properties>
 
-    <scm>                  '
+    <scm>
         <developerConnection>scm:git:ssh://git@github.com/RIPE-NCC/whois.git</developerConnection>
     </scm>
 
